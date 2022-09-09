@@ -8,7 +8,9 @@ namespace MauiApp1.ViewModels
 {
     public class MainPageViewModel : BaseViewModel
     {
-        public Command CountCommand { get; set; }
+        public Command CountCommand { get; private set; }
+
+        public Command NextCommand { get; private set; }
 
         public string ButtonText
         {
@@ -48,12 +50,19 @@ namespace MauiApp1.ViewModels
         public MainPageViewModel()
         {
             CountCommand = new Command(async () => await DoCount());
+            NextCommand = new Command(async () => await ShowNext());
         }
 
-        private async Task DoCount()
+        private Task DoCount()
         {
             Count++;
             OnPropertyChanged(nameof(Count));
+            return Task.CompletedTask;
+        }
+
+        private async Task ShowNext()
+        {
+
         }
     }
 }

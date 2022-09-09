@@ -35,6 +35,8 @@
                 Command="{Binding CountCommand}"
                 HorizontalOptions="Center" />
 
+            <Button Text="Next Page" Command="{Binding NextCommand}"/>
+
         </VerticalStackLayout>
     </ScrollView>
 
